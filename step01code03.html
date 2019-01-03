@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Hello Vue.js</title>
+<style>
+  div { box-sizing: border-box; border: 1px solid #ccc; margin: 10px 0 0 10px;
+    min-height: 100px; text-align: center; line-height: 100px; }
+  #aside { float: left; width: 200px; height: 350px; line-height: 350px;  }
+  #container { float: left; width: 400px; height: 350px; padding: 0 10px 10px 0; }
+  .bg { background-color: aqua; }
+</style>
+</head>
+
+<body>  
+<div id="aside">{{ aside }}</div>
+<div id="container">
+  <div id="header"> {{ header }} </div>
+  <div id="contents"> {{ contents }} </div>
+  <div id="footer" v-bind:class=' "bg" '> {{ footer }} </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var vueConfigs = {
+  el: '#contents', // 요소를 바꾸어 봅시다
+  data: {
+    contents: '여기는 Vue의 영역',
+    aside: '여기는 aside',
+    header: '여기는 header',
+    footer: '여기는 footer'
+  }
+};
+var app = new Vue( vueConfigs );
+app.$el.style.backgroundColor = 'yellow';
+</script>
+</body>
+
+</html>
