@@ -8,17 +8,14 @@
 
 <body>  
 <div id="app">
-  <h1>Hello {{ str }} world!</h1>
+  <h1>{{ new Date() }}</h1>
+  <h1>{{ (Math.floor(Math.random()*6)%2 == 1) ? '홀' : '짝'  }}</h1>
+  <h1>{{ ('내'+'힘들다').split('').reverse().join('') + "!" }}</h1>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-var app = new Vue({
-  el: '#app',
-  data: {
-    str: 'Vue.js'
-  }
-});
+var app = new Vue({ el: '#app' });
 </script>
 </body>
 

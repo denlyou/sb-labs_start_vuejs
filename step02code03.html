@@ -8,7 +8,8 @@
 
 <body>  
 <div id="app">
-  <h1>Hello {{ str }} world!</h1>
+  <h1>{{ str }}</h1>
+  <h1 v-html='str' class='src'></h1>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,7 +17,7 @@
 var app = new Vue({
   el: '#app',
   data: {
-    str: 'Vue.js'
+    str: '문자를 <strong>굵게</strong> 또는 <em>기울리고</em> 싶은데...'
   }
 });
 </script>
