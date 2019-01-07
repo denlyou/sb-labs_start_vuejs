@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <h1>웹 브라우저의 JS 콘솔을 열어 Vue 인스턴스를 확인하세요</h1>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: '#app',
+  data: {
+    data1: "dummy",
+    data2: "dummy",
+    data3: "dummy",
+    data4: "dummy",
+    data5: "dummy"
+  },
+  methods: {
+    testMethod1(){ // ES6 문법 == testMethod1: function(){ 
+      return "dummy"
+    },
+    testMethod2(){ return "dummy" },
+    testMethod3(){ return "dummy" },
+    testMethod4(){ return "dummy" },
+    testMethod5(){ return "dummy" }
+  }
+});
+console.log( app );
+</script>
+</body>
+
+</html>

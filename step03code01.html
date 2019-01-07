@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <h1>
+    반지름이 {{ radius }}cm인
+    둘레의 길이는 {{ circumference(radius) }}cm이고, 
+    원의 넓이는 {{ circleArea(radius) }}cm<sup>2</sup>입니다.
+  </h1>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var dataOptionsObject = {
+  radius: 1,
+  dummy: "안쓰임"
+};
+var methodsOptionObject = {
+  circumference: function( r ){ 
+    return Math.round( 2*Math.PI*r *100)/100;
+  },
+  circleArea: function( r ){ 
+    return Math.round( Math.PI*r*r *100)/100;
+  }
+};
+var vueConfigOptions = {
+  el: '#app',
+  data: dataOptionsObject,
+  methods: methodsOptionObject
+};
+var app = new Vue( vueConfigOptions );
+</script>
+</body>
+
+</html>
