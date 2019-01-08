@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <p>
+    오늘은 
+    <span v-if=' dayOfWeek==1 '>월요일! 원래 </span>
+    <span v-else-if=' dayOfWeek==2 '>화요일! 화가 나서 </span>
+    <span v-else-if=' dayOfWeek==3 '>수요일! 수없이 </span>
+    <span v-else-if=' dayOfWeek==4 '>목요일! 목아프게 </span>
+    <span v-else-if=' dayOfWeek==5 '>금요일! 금요일이라 </span>
+    <span v-else-if=' dayOfWeek==6 '>토요일! 토하도록 </span>
+    <span v-else>일욜일! 일단 </span>
+    마시는 날 ~
+  </p>
+  <button onclick="rand()">다른날은?</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: '#app',
+  data: {
+    dayOfWeek: (new Date()).getDay()
+  }
+});
+function rand(){
+  app.dayOfWeek = Math.floor(Math.random()*7);
+};
+</script>
+</body>
+
+</html>

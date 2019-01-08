@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="loginBox">
+  <p>비로그인 상태 화면</p>
+  <button onclick="login();">로그인!</button>
+</div>
+<div id="logoutBox" style="display: none;">
+  <p>로그인 상태 화면</p>
+  <button onclick="logout();">로그아웃!</button>
+</div>
+<script>
+var loginBox = document.getElementById('loginBox');
+var logoutBox = document.getElementById('logoutBox');
+function login(){
+  loginBox.style.display = 'none';
+  logoutBox.style.display = 'block';
+};
+function logout(){
+  loginBox.style.display = 'block';
+  logoutBox.style.display = 'none';
+};
+</script>
+</body>
+
+</html>

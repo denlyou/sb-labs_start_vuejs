@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <div v-if='isLoginBoxShow'>
+    <p>비로그인 상태 화면</p>
+    <button onclick="toggle();">로그인!</button>
+  </div>
+  <div v-else>
+    <p>로그인 상태 화면</p>
+    <button onclick="toggle();">로그아웃!</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: '#app',
+  data: { isLoginBoxShow: true }
+});
+function toggle(){
+  app.isLoginBoxShow = !app.isLoginBoxShow;
+};
+</script>
+</body>
+
+</html>

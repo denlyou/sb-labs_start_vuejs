@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="loginBox"></div>
+<script>
+// 레이아웃을 변수로 정의
+var loginLayout = '<p>비로그인 상태 화면</p>'
+  + '<button onclick="toggleLogin();">로그인!</button>';
+var logoutLayuot = '<p>로그인 상태 화면</p>'
+  + '<button onclick="toggleLogin();">로그아웃!</button>';
+
+var isLogin = false; // 인증 상태
+var loginBox = document.getElementById('loginBox'); 
+
+loginBox.innerHTML = loginLayout; // 초기 화면
+function toggleLogin(){
+  isLogin = !isLogin;
+  loginBox.innerHTML = isLogin ? logoutLayuot : loginLayout;
+}
+</script>
+</body>
+
+</html>
