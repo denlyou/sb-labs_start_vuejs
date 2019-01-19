@@ -9,18 +9,18 @@
 <body>  
 <div id="app">
   <h1>{{ value }}</h1>
-  <button @click=' setValue("버튼", $event) '>클릭!</button>
+  <input id="INPUT" type="text" @keyUp.enter=' setValue() '/>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 const app = new Vue({
   el: "#app",
-  data: { value: "클릭해 보세요" },
+  data: { value: "value" },
   methods: {
-    setValue: function(str, e){
-      this.value = str + " 클릭";
-      console.log(e);
+    setValue: function(){
+      this.value = document.getElementById("INPUT").value;
+      document.getElementById("INPUT").value = "";
     }
   }
 });

@@ -9,8 +9,7 @@
 <body>  
 <div id="app">
   <h1>{{ value }}</h1>
-  <button v-on:click=' setValue("왼쪽") '>클릭!</button>
-  <button @click=' setValue("오른쪽") '>클릭!</button>
+  <button @click=' setValue("버튼", $event) '>클릭!</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -19,8 +18,9 @@ const app = new Vue({
   el: "#app",
   data: { value: "클릭해 보세요" },
   methods: {
-    setValue: function(str){
+    setValue: function(str, e){
       this.value = str + " 클릭";
+      console.log(e);
     }
   }
 });
