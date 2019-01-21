@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<ul id="app">
+  <li><a v-bind:href=' url '>{{ url }}</a></li>
+  <li><a :href=' getUrl("google") '>google</a></li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: { url: "https://start-vue.js-web.app" },
+  methods: {
+    getUrl: function(name) {
+      return "http://"+ name +".com";
+    }
+  }
+});
+</script>
+</body>
+
+</html>

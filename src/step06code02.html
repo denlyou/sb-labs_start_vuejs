@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<ul id="app">
+  <li><a :href=' url ' href="http://google.com/">어디일까?</a></li>
+  <li><a href="http://google.com/" :href=' url ' >똑같을까?</a></li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: { url: "https://start-vue.js-web.app" }
+});
+</script>
+</body>
+
+</html>

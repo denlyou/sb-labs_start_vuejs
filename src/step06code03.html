@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <p :style=' redFont ' style="font-size: 3em;">스타일 바인딩</p>
+  <p :class=' "bomb" ' class="love" >클래스 바인딩</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: { redFont: "color: red;" }
+});
+</script>
+</body>
+
+</html>
