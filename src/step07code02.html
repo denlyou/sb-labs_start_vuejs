@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <p><input type="text" :value=' value '></p>
+  <button @click=' value=0 '>0</button>
+  <button @click=' value=1 '>1</button>
+  <button @click=' value=2 '>2</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: { value: 0 },
+  methods: {
+    setValue: function(){
+      this.value = document.getElementById("INPUT").value;
+    }
+  }
+});
+</script>
+</body>
+
+</html>

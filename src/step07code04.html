@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <h1>{{ value }}</h1>
+  <input type="text" v-model=' value '>
+  <button @click=' setDefault() '>기본값</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: { value: "default" },
+  methods: {
+    setDefault: function(){
+      this.value = "default";
+    }
+  }
+});
+</script>
+</body>
+
+</html>
