@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <p :class=' attrNamesArray '>배열 지정</p>
+  <p :class=' attrNamesObject '>객체 지정</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: {
+    attrNamesArray: ["btn", "btn-primary", "btn-block"] ,
+    attrNamesObject: {
+      attrName: true,
+      hideAttr: false,
+      'attr-name': true
+    }
+  }
+});
+</script>
+</body>
+
+</html>
