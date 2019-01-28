@@ -8,8 +8,10 @@
 
 <body>  
 <div id="app">
-  <p :class=' namesArray '>배열 지정</p>
-  <p :class=' namesObject '>객체 지정</p>
+  <h1>{{ str +" : "+ typeof str }}</h1>
+  <input type="text" v-model.trim.lazy=' str '>
+  <h1>{{ num +" : "+ typeof num }}</h1>
+  <input type="number" v-model.number=' num '>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,12 +19,8 @@
 const app = new Vue({
   el: "#app",
   data: {
-    namesArray: ["btn", "btn-primary", "btn-block"] ,
-    namesObject: {
-      attrName: true,
-      hideAttr: false,
-      'attr-name': true
-    }
+    str: "default",
+    num: 10
   }
 });
 </script>

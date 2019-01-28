@@ -8,8 +8,8 @@
 
 <body>  
 <div id="app">
-  <p :class=' namesArray '>배열 지정</p>
-  <p :class=' namesObject '>객체 지정</p>
+  <p :style=' { fontSize: "0.9em", color: "#999999" } '>인라인 객체로 지정</p>
+  <p style="font-size: 10pt;" :style=' styleObject '>객체로 지정</p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,11 +17,9 @@
 const app = new Vue({
   el: "#app",
   data: {
-    namesArray: ["btn", "btn-primary", "btn-block"] ,
-    namesObject: {
-      attrName: true,
-      hideAttr: false,
-      'attr-name': true
+    styleObject: {
+      fontSize: 32 + "px",
+      fontWeight: "bold"
     }
   }
 });
