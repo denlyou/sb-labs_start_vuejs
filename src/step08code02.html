@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <p><span v-for=' item in arr '>{{ item }} </span></p>
+  <p><span v-for=' item in obj '>{{ item }} </span></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: {
+    arr: ["A", "B", "C", "D", "E"],
+    obj: {
+      one: 1,
+      two: 2,
+      three: 3
+    }
+  }
+});
+</script>
+</body>
+
+</html>

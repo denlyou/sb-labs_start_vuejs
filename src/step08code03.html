@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<div id="app">
+  <p v-for=' (item, index) in arr '>{{ index }} => {{ item }}</p>
+  <br>
+  <p v-for=' (item, key) in obj '>{{ key }} : {{ item }}</p>
+  <br>
+  <p v-for=' (item, key, index) in obj '>{{ index }} => {{ key }} : {{ item }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el: "#app",
+  data: {
+    arr: ["A", "B", "C", "E", "F"],
+    obj: { one: 1, two: 2, three: 3 }
+  }
+});
+</script>
+</body>
+
+</html>
