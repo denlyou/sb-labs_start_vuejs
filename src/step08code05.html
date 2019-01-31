@@ -7,14 +7,15 @@
 </head>
 
 <body>  
-<div id="app">
-  <input type="text" v-model.trim='todoTitle' placeholder="할일명(2자이상)" @keydown.enter='addTodo()'>
-  <button @click='addTodo()'>추가</button>
-  <ul>
-    <li v-for=' (todo, key, index) in todoList ' :key='key'>
-      <button @click=' remove(index) '>X</button> {{ todo.title }}
-    </li>
-  </ul>
+<ul id="app">
+  <li v-for=' (no, i) in arr '>
+    <button @click=' remove(i) '>X</button> {{ no }}
+  </li>
+  <li>
+    <button @click=' append(1) '>+1</button>
+    <button @click=' append(5) '>+5</button>
+    <button @click=' append(10) '>+10</button>
+  </li>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,29 +23,17 @@
 const app = new Vue({
   el: "#app",
   data: {
-    nextId: 1,
-    todoTitle: "",
-    todoList: [
-      { id: 0, title: "sample data"}
-    ]
+    cur: 0,
+    arr: []
   },
   methods: {
-    addTodo: function(x){
-      if( this.todoTitle.length < 2) {
-        alert("할일명을 2자 이상 입력하세요");
-        return;
+    append: function(x){
+      for(let i=0; i<x; i++){
+        this.arr.push( ++this.cur );
       }
-      const now = new Date();
-      const newTodo = {
-        id: this.nextId,
-        title: this.todoTitle
-      }
-      this.todoList.push(newTodo);
-      this.nextId++;
-      this.todoTitle = "";
     },
     remove: function(index){
-      this.todoList.splice(index, 1);
+      this.arr.splice(index, 1);
     }
   }
 });
