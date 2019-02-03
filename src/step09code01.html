@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Labs Vue.js Example</title>
+</head>
+
+<body>  
+<h1>vue lifecyle</h1>
+<p>
+  <button onclick="javascript:initVue();">인스턴스 초기화</button>
+  <button onclick="javascript:destroyVue();">인스턴스 제거</button>
+  <button onclick="javascript:removeDOM();">DOM 제거</button>
+</p>
+<ul id="app" style="background: yellow;">
+  <li v-for=' no in lastNo '> {{ no }} </li>
+  <li><button @click=' append() '>appned</button></li>
+</ul>
+      
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var app = null;
+function initVue(){
+  app = new Vue({
+    el: "#app",
+    data: { lastNo: 10 },
+    methods: {
+      append: function(){
+        this.lastNo++;
+      }
+    },
+    computed: {
+      dummy: function(){
+        return this.lastNo;
+      }
+    },
+    beforeCreate: function(){
+      console.log("[생명주기] beforeCreate!", this);
+    },
+    created: function(){
+      console.log("[생명주기] created!", this);
+    },
+    beforeMount: function(){
+      console.log("[생명주기] beforeMount!", this);
+    },
+    mounted: function(){
+      console.log("[생명주기] mounted!", this);
+    },
+    beforeUpdate: function(){
+      console.log("[생명주기] beforeUpdate!", this);
+    },
+    updated: function(){
+      console.log("[생명주기] updated!", this);
+    },
+    beforeDestroy: function(){
+      console.log("[생명주기] beforeDestroy!", this);
+    },
+    destroyed: function(){
+      console.log("[생명주기] destroyed!", this);
+    },
+  });
+}
+function destroyVue(){
+  if(app){
+    app.$destroy();
+  }
+}
+function removeDOM(){
+  document.getElementById("app").remove();
+}
+
+</script>
+</body>
+
+</html>
