@@ -37,19 +37,19 @@ function initVue(){
     beforeCreate: function(){
       console.log("[생명주기] beforeCreate!", this);
     },
-    /* 1 */: function(){
+    created: function(){
       console.log("[생명주기] created!", this);
     },
     beforeMount: function(){
       console.log("[생명주기] beforeMount!", this);
     },
-    /* 2 */: function(){
+    mounted: function(){
       console.log("[생명주기] mounted!", this);
     },
-    /* 3 */: function(){
+    beforeUpdate: function(){
       console.log("[생명주기] beforeUpdate!", this);
     },
-    /* 4 */: function(){
+    updated: function(){
       console.log("[생명주기] updated!", this);
     },
     beforeDestroy: function(){
